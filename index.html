@@ -1,1 +1,1247 @@
 
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <title>TAXAI · Boutique AI Tax & Fiscaal Kantoor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="TAXAI is een boutique kantoor waar fiscale juristen en AI samenwerken aan slimme, scherpe en betaalbare oplossingen voor fiscale structuren, contracten en vraagstukken."
+  />
+  <style>
+    :root {
+      --bg: #f7f7f5;
+      --bg-alt: #ffffff;
+      --accent: #7b1b2b; /* Bordeaux rood */
+      --accent-soft: #f3e4e7;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --text-muted-light: #e5e7eb;
+      --border-soft: #e5e7eb;
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.09);
+      --max-width: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header / nav */
+
+    header {
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: linear-gradient(
+        to bottom,
+        rgba(24, 8, 12, 0.75),
+        rgba(24, 8, 12, 0.3)
+      );
+      color: #f9fafb;
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .logo-mark {
+      height: 32px;
+      width: 32px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #e11d48, #7b1b2b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fdf2f8;
+      font-size: 0.85rem;
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(127, 29, 29, 0.55);
+    }
+
+    .logo-sub {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: #e5e7eb;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: #e5e7eb;
+      opacity: 0.8;
+      transition: color 0.15s ease, opacity 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      color: #f9fafb;
+      opacity: 1;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      color: #e5e7eb;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.55rem 1.2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      background: #f9fafb;
+      color: #111827;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.35);
+      transition: transform 0.12s ease, box-shadow 0.12s ease,
+        background-color 0.15s ease, border-color 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.45);
+      background-color: #e5e7eb;
+    }
+
+    .btn-outline-light {
+      background: transparent;
+      border-color: rgba(243, 244, 246, 0.8);
+      color: #f9fafb;
+      box-shadow: none;
+    }
+
+    .btn-outline-light:hover {
+      background: rgba(24, 8, 12, 0.4);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.45);
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .section {
+      padding: 3.5rem 1.5rem;
+    }
+
+    .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    /* HERO – volledige afbeelding */
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      padding: 0;
+      color: #f9fafb;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url("hunters-race-MYbhN8KaaEc-unsplash.jpg");
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.02);
+      filter: saturate(1.05);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(24, 8, 12, 0.9),
+        rgba(24, 8, 12, 0.75),
+        rgba(15, 23, 42, 0.9)
+      );
+      mix-blend-mode: multiply;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 5.5rem 1.5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 100vh;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      background: rgba(127, 29, 29, 0.28);
+      color: #fee2e2;
+      margin-bottom: 1.2rem;
+      border: 1px solid rgba(254, 202, 202, 0.6);
+      backdrop-filter: blur(4px);
+    }
+
+    .eyebrow-dot {
+      height: 7px;
+      width: 7px;
+      border-radius: 999px;
+      background: #f97373;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4.2vw, 2.9rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin-bottom: 1rem;
+      max-width: 26rem;
+    }
+
+    .hero-sub {
+      font-size: 0.98rem;
+      max-width: 30rem;
+      color: var(--text-muted-light);
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-meta {
+      font-size: 0.76rem;
+      color: #e5e7eb;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .hero-meta-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 999px;
+      background: #9ca3af;
+    }
+
+    .hero-tagline {
+      font-size: 0.78rem;
+      color: #d1d5db;
+      margin-top: 1.3rem;
+    }
+
+    /* Generic section heading */
+
+    .section-heading {
+      max-width: 32rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-heading h2 {
+      font-size: 1.5rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-heading p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* Features / visie */
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      padding: 1.4rem 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+    }
+
+    .feature-label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #6b7280;
+    }
+
+    .feature-title {
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+
+    .feature-footnote {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+
+    /* Services / fiscale constructies & contracten */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 1.8rem;
+      align-items: flex-start;
+    }
+
+    .services-list {
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: grid;
+      gap: 0.45rem;
+      margin-top: 0.4rem;
+    }
+
+    .services-list li::before {
+      content: "•";
+      margin-right: 0.4rem;
+      color: #4b5563;
+    }
+
+    .services-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      padding: 1.3rem 1.3rem;
+      font-size: 0.85rem;
+      display: grid;
+      gap: 0.6rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .services-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #9ca3af;
+    }
+
+    /* How it works */
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 2.2rem;
+      align-items: flex-start;
+    }
+
+    .steps {
+      display: grid;
+      gap: 1rem;
+      font-size: 0.88rem;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.6rem 1rem;
+      align-items: flex-start;
+    }
+
+    .step-number {
+      height: 26px;
+      width: 26px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #4b5563;
+      margin-top: 0.25rem;
+      background: #f9fafb;
+    }
+
+    .step-title {
+      font-weight: 500;
+      margin-bottom: 0.1rem;
+    }
+
+    .step-body {
+      color: var(--text-muted);
+    }
+
+    .trust-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      padding: 1.4rem 1.3rem;
+      font-size: 0.85rem;
+      display: grid;
+      gap: 0.7rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .trust-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #9ca3af;
+    }
+
+    .trust-list {
+      list-style: none;
+      display: grid;
+      gap: 0.4rem;
+      color: var(--text-muted);
+    }
+
+    .trust-list li {
+      display: flex;
+      gap: 0.45rem;
+      align-items: flex-start;
+    }
+
+    .trust-bullet {
+      height: 6px;
+      width: 6px;
+      margin-top: 0.45rem;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    /* Pricing */
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 1.8rem;
+      align-items: stretch;
+    }
+
+    .pricing-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+
+    .pricing-card {
+      background: #ffffff;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-soft);
+      padding: 1.6rem 1.5rem;
+      display: grid;
+      gap: 1rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .pricing-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.8rem;
+      align-items: flex-start;
+    }
+
+    .pricing-pill {
+      font-size: 0.75rem;
+      padding: 0.16rem 0.55rem;
+      border-radius: 999px;
+      background: #fef2f2;
+      color: var(--accent);
+      border: 1px solid #fecaca;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .price span {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      margin-left: 0.1rem;
+    }
+
+    .pricing-list {
+      list-style: none;
+      display: grid;
+      gap: 0.35rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .pricing-list li::before {
+      content: "✓";
+      font-size: 0.8rem;
+      margin-right: 0.4rem;
+      color: #16a34a;
+    }
+
+    /* FAQ */
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      font-size: 0.88rem;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      padding: 1.1rem 1rem;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      margin-bottom: 0.35rem;
+    }
+
+    .faq-a {
+      color: var(--text-muted);
+    }
+
+    /* Contact */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    form {
+      background: #ffffff;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-soft);
+      padding: 1.6rem 1.4rem;
+      display: grid;
+      gap: 1rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .form-row {
+      display: grid;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+    }
+
+    label {
+      font-weight: 500;
+    }
+
+    input,
+    textarea,
+    select {
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      padding: 0.6rem 0.8rem;
+      font-size: 0.9rem;
+      outline: none;
+      font-family: inherit;
+      background: #f9fafb;
+      transition: border-color 0.12s ease, background-color 0.12s ease,
+        box-shadow 0.12s ease;
+    }
+
+    textarea {
+      border-radius: 16px;
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      background: #ffffff;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(123, 27, 43, 0.45);
+    }
+
+    .consent-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.45rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .consent-row input[type="checkbox"] {
+      width: 15px;
+      height: 15px;
+      margin-top: 0.15rem;
+      border-radius: 4px;
+    }
+
+    .contact-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .contact-meta-block {
+      padding: 0.9rem 1rem;
+      border-radius: var(--radius-lg);
+      border: 1px dashed var(--border-soft);
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .contact-meta strong {
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    footer {
+      border-top: 1px solid rgba(229, 231, 235, 0.8);
+      padding: 1.6rem 1.5rem 2.1rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.4rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-main);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 960px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-cta span {
+        display: none;
+      }
+
+      .services-grid,
+      .how-grid,
+      .pricing-grid,
+      .faq-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .hero-content {
+        padding: 5.2rem 1.3rem 3.2rem;
+      }
+
+      h1 {
+        max-width: 100%;
+      }
+
+      .section {
+        padding-inline: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <div class="nav">
+        <div class="logo">
+          <div class="logo-mark">TX</div>
+          <div>
+            TAXAI
+            <div class="logo-sub">Fiscale juristen · AI gedreven</div>
+          </div>
+        </div>
+        <nav class="nav-links">
+          <a href="#about">Visie</a>
+          <a href="#services">Fiscale diensten</a>
+          <a href="#how">Werkwijze</a>
+          <a href="#pricing">Tarieven</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <div class="nav-cta">
+          <span>Scherp · snel · betaalbaar</span>
+          <a href="#contact" class="btn">Plan een call →</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Boutique AI tax & fiscaal kantoor
+          </div>
+          <h1>Toegankelijke fiscale oplossingen dankzij slimme AI&nbsp;+ juristen.</h1>
+          <p class="hero-sub">
+            Fiscale juristen en AI werken samen aan heldere structuren,
+            contracten en strategie. Sneller inzicht, scherper advies en
+            aanzienlijk lagere kosten dan bij klassieke taxkantoren.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn">
+              Vrijblijvend fiscaal intakegesprek
+            </a>
+            <a href="#services" class="btn btn-outline-light">
+              Fiscale structuur of contract laten checken?
+            </a>
+          </div>
+          <div class="hero-meta">
+            <span>✓ AI voor analyse · mensen voor oordeel & strategie</span>
+            <span class="hero-meta-dot"></span>
+            <span>✓ Constructies, contracten en complexe fiscale vraagstukken</span>
+          </div>
+          <div class="hero-tagline">
+            Minder uren, meer scherpte. TAXAI is gebouwd voor ondernemers, investeerders en professionals die fiscaal vooruit willen kijken.
+          </div>
+        </div>
+      </section>
+
+      <!-- VISIE -->
+      <section id="about" class="section">
+        <div class="section-inner">
+          <div class="section-heading">
+            <h2>Fiscale scherpte, zonder ouderwetse uurtje-factuurtje-cultuur.</h2>
+            <p>
+              Klassiek fiscaal advies is vaak duur en traag. Veel tijd gaat op
+              aan zoeken, vergelijken en controleren. AI kan juist in dat stuk
+              enorm versnellen, mits zorgvuldig ingericht en gecontroleerd. Bij
+              TAXAI combineren we high-end fiscale expertise met moderne
+              AI-analyse, zodat u sneller en beter onderbouwde beslissingen kunt
+              nemen.
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <article class="feature-card">
+              <div class="feature-label">01 · AI als fiscale co-piloot</div>
+              <div class="feature-title">Structuur in complexe fiscale data</div>
+              <p>
+                AI helpt bij het ordenen van cijfers, contracten en regelgeving,
+                en vergelijkt uw situatie met talloze vergelijkbare structuren.
+                De jurist filtert ruis, beoordeelt kwaliteit en vertaalt dit
+                naar een concrete strategie.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-label">02 · Contracten & documentatie</div>
+              <div class="feature-title">Fiscale impact direct in beeld</div>
+              <p>
+                Denk aan management- en aandeelhoudersovereenkomsten, lening-
+                en royaltycontracten, internationale structuren. AI signaleert
+                fiscale aandachtspunten en inconsistenties; de jurist beoordeelt
+                risico’s en kansen.
+              </p>
+              <p class="feature-footnote">
+                Ideaal voor DGA’s, scale-ups, investeringsvehikels en high-end
+                professionals.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-label">03 · Betaalbare topkwaliteit</div>
+              <div class="feature-title">Minder uren, meer resultaat</div>
+              <p>
+                Door standaardanalyse grotendeels te automatiseren, besparen we
+                uren op zoekwerk. Die uren gaan naar scenario’s, planning en
+                gesprekken met u — niet naar het eindeloos herschrijven van
+                memo’s.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-label">04 · Transparantie & ethiek</div>
+              <div class="feature-title">Fiscale creativiteit binnen de lijnen</div>
+              <p>
+                We zijn helder over wat wel en niet kan. Geen agressieve
+                schijnconstructies, wel scherpe planning binnen wet en beleid.
+                Gegevens worden vertrouwelijk verwerkt en niet gebruikt om
+                publieke AI-modellen te trainen.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FISCALE DIENSTEN -->
+      <section id="services" class="section" style="padding-top: 0">
+        <div class="section-inner services-grid">
+          <div>
+            <div class="section-heading">
+              <h2>Fiscale structuren, contracten en vraagstukken met AI-ondersteuning.</h2>
+              <p>
+                Of het nu gaat om een internationale structuur, een
+                managementparticipatie, vastgoed, of simpelweg “betaal ik niet
+                te veel belasting?” — AI helpt om patronen en scenario’s snel
+                te zien, de fiscale jurist bepaalt de route.
+              </p>
+            </div>
+
+            <ul class="services-list">
+              <li>
+                <strong>Fiscale structuren & planning</strong> – holdingstructuren,
+                vastgoed-BV’s, internationale opzet, managementparticipaties,
+                IP-structuren.
+              </li>
+              <li>
+                <strong>Contracten met fiscale impact</strong> – aandeelhouders-
+                en managementovereenkomsten, leningen, royalty’s, earn-out en
+                participatiecontracten.
+              </li>
+              <li>
+                <strong>Controle en vergelijking</strong> – AI vergelijkt uw
+                contracten en structuren met veelvoorkomende varianten en
+                marktpraktijk; juristen duiden risico’s en optimalisaties.
+              </li>
+              <li>
+                <strong>Sparring & second opinions</strong> – toets bestaande
+                adviezen of plannen op fiscale logica, uitvoerbaarheid en
+                alternatieve scenario’s.
+              </li>
+            </ul>
+          </div>
+
+          <aside class="services-card">
+            <div class="services-tag">AI-gestuurde fiscale review</div>
+            <h3 style="font-size: 1rem; margin-bottom: 0.3rem">
+              Voorbeeld: “Fiscale constructie quickscan”
+            </h3>
+            <p>
+              U deelt uw huidige of voorgenomen structuur en relevante contracten.
+              AI helpt structuur, geldstromen en aandachtspunten te visualiseren;
+              een fiscaal jurist kijkt vervolgens naar:
+            </p>
+            <ul class="services-list" style="margin-top: 0.2rem">
+              <li>In lijn met wetgeving, beleid en jurisprudentie?</li>
+              <li>Risico’s bij controle of wijzigend beleid</li>
+              <li>Mogelijke vereenvoudiging en optimalisatie</li>
+            </ul>
+            <p style="font-size: 0.8rem; margin-top: 0.4rem;">
+              U ontvangt een compact, begrijpelijk memo met concrete opties en
+              aandachtspunten — geen onleesbaar rapport van 40 pagina’s.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <!-- WERKWIJZE -->
+      <section id="how" class="section" style="padding-top: 0">
+        <div class="section-inner how-grid">
+          <div>
+            <div class="section-heading">
+              <h2>Hoe werken fiscale juristen en AI samen bij TAXAI?</h2>
+              <p>
+                U spreekt altijd met een mens. AI draait achter de schermen en
+                helpt bij rekenen, vergelijken en structureren. De jurist maakt
+                keuzes, weegt risico’s en bespreekt scenario’s met u.
+              </p>
+            </div>
+
+            <div class="steps">
+              <div class="step">
+                <div class="step-number">1</div>
+                <div>
+                  <div class="step-title">Intake & doelbepaling</div>
+                  <p class="step-body">
+                    We bespreken uw situatie, doelen (bijv. cashflow, verkoop,
+                    bescherming vermogen) en risicobereidheid. We bepalen welke
+                    onderdelen geschikt zijn voor AI-gestuurde analyse.
+                  </p>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="step-number">2</div>
+                <div>
+                  <div class="step-title">AI-analyse van scenario’s</div>
+                  <p class="step-body">
+                    AI helpt om varianten door te rekenen, structuren te
+                    vergelijken en relevante regels te clusteren. De fiscaal
+                    jurist selecteert de zinvolle scenario’s en filtert
+                    theoretische ruis.
+                  </p>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="step-number">3</div>
+                <div>
+                  <div class="step-title">Strategie, onderbouwing & uitvoering</div>
+                  <p class="step-body">
+                    We presenteren 1–3 realistische opties met de voor- en
+                    nadelen. U kiest, wij werken de structuur, contracten en
+                    benodigde documentatie uit — en houden de fiscale gevolgen
+                    monitorbaar.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="trust-card">
+            <div class="trust-tag">Zorgvuldigheid & compliance</div>
+            <h3 style="font-size: 1rem; margin-bottom: 0.2rem">
+              Fiscaal creatief, maar binnen de kaders.
+            </h3>
+            <ul class="trust-list">
+              <li>
+                <span class="trust-bullet"></span>
+                <span>
+                  Geen agressieve schijnconstructies. Wel slimme, goed
+                  onderbouwde planning in lijn met wet, beleid en
+                  rechtspraak.
+                </span>
+              </li>
+              <li>
+                <span class="trust-bullet"></span>
+                <span>
+                  AI-voorstellen worden nooit klakkeloos gevolgd; een
+                  fiscaal jurist is eindverantwoordelijk.
+                </span>
+              </li>
+              <li>
+                <span class="trust-bullet"></span>
+                <span>
+                  Gegevens worden vertrouwelijk verwerkt en niet gebruikt
+                  om publieke AI-modellen te trainen.
+                </span>
+              </li>
+              <li>
+                <span class="trust-bullet"></span>
+                <span>
+                  Heldere dossiervorming zodat advies verdedigbaar is
+                  richting Belastingdienst en andere stakeholders.
+                </span>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- TARIEVEN -->
+      <section id="pricing" class="section">
+        <div class="section-inner pricing-grid">
+          <div>
+            <div class="section-heading">
+              <h2>Heldere, voorspelbare tarieven. Geen meter die “stiekem” doorloopt.</h2>
+              <p>
+                Door AI in te zetten op reken- en vergelijkingswerk, kunnen we
+                scherp en transparant prijzen. Waar mogelijk werken we met vaste
+                bedragen per fase; alleen echt maatwerk gaat op uurbasis.
+              </p>
+            </div>
+
+            <p class="pricing-note">
+              Onderstaande bedragen zijn indicatief. Tijdens de intake krijgt u
+              een voorstel op maat, passend bij complexiteit en omvang.
+            </p>
+          </div>
+
+          <aside class="pricing-card" aria-label="Indicatieve tarieven">
+            <div class="pricing-top">
+              <div>
+                <div class="pricing-pill">Startpakket</div>
+                <div style="margin-top: 0.3rem; font-size: 0.9rem">
+                  Fiscale quickscan of structuur- / contractreview
+                </div>
+              </div>
+            </div>
+            <div class="price">
+              € 650
+              <span>vast tarief incl. AI-analyse</span>
+            </div>
+
+            <ul class="pricing-list">
+              <li>Intakecall (online) van ca. 45–60 minuten</li>
+              <li>AI-ondersteunde analyse van structuur, cijfers en contracten</li>
+              <li>Review en duiding door fiscaal jurist</li>
+              <li>Kort memo in duidelijke taal met 1–3 opties</li>
+              <li>Indicatie van vervolgstappen en eventuele vervolgkosten</li>
+            </ul>
+
+            <div style="font-size: 0.78rem; color: var(--text-muted)">
+              Voor uitgebreide herstructureringen, internationale vraagstukken
+              of langdurige trajecten werken we met duidelijke uurtarieven en
+              fasering. Geen verrassingen achteraf.
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="section" style="padding-top: 0">
+        <div class="section-inner">
+          <div class="section-heading">
+            <h2>Veelgestelde vragen.</h2>
+            <p>
+              Twijfelt u of AI in de fiscale praktijk “mag” of geschikt is voor
+              uw situatie? Dit zijn enkele veel gehoorde vragen.
+            </p>
+          </div>
+
+          <div class="faq-grid">
+            <div class="faq-item">
+              <div class="faq-q">Beslist AI welke fiscale route ik moet kiezen?</div>
+              <div class="faq-a">
+                Nee. AI helpt bij ordenen, rekenen en vergelijken. Een menselijke
+                fiscaal jurist maakt de keuzes, weegt risico’s en bespreekt
+                scenario’s met u. AI is gereedschap, geen beslisser.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">Hoe zit het met privacy en fiscale geheimhouding?</div>
+              <div class="faq-a">
+                We behandelen alle gegevens als strikt vertrouwelijk en werken
+                met duidelijke verwerkersovereenkomsten. Uw data worden niet
+                gebruikt om publieke AI-modellen te trainen. Waar nodig leggen
+                we dit contractueel vast.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">
+                Is dit geschikt voor internationale structuren en expats?
+              </div>
+              <div class="faq-a">
+                Ja, mits we de juiste input en context hebben. AI helpt met
+                structureren en vergelijken; de jurist bewaakt de toepassing van
+                relevante Nederlandse en – waar van toepassing – buitenlandse
+                regels. Bij zeer specialistische onderwerpen schakelen we
+                eventueel aanvullende experts in.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">
+                Is TAXAI een vervanging van mijn accountant of administrateur?
+              </div>
+              <div class="faq-a">
+                Nee. Wij richten ons op fiscale strategie, structuren en
+                contracten. Veel klanten werken gewoon door met hun eigen
+                accountant of administratiekantoor voor de uitvoering en
+                aangiften. Waar nodig stemmen we samen af.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section">
+        <div class="section-inner contact-grid">
+          <div>
+            <div class="section-heading">
+              <h2>Plan een vrijblijvend TAXAI kennismakingsgesprek.</h2>
+              <p>
+                Vat in enkele regels samen waar uw vraag over gaat. We reageren
+                meestal binnen één werkdag met een voorstel voor een online
+                call. In dat gesprek kijken we direct welke rol AI kan spelen en
+                wat u van ons kunt verwachten.
+              </p>
+            </div>
+
+            <form>
+              <div class="form-row">
+                <label for="name">Naam</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Uw naam"
+                  required
+                />
+              </div>
+
+              <div class="form-row">
+                <label for="email">E-mail</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="naam@voorbeeld.nl"
+                  required
+                />
+              </div>
+
+              <div class="form-row">
+                <label for="topic">Onderwerp</label>
+                <select id="topic" name="topic" required>
+                  <option value="">Kies een categorie…</option>
+                  <option>Fiscale structuur / holding</option>
+                  <option>Contract met fiscale impact</option>
+                  <option>Vastgoed & box 3 / BV</option>
+                  <option>Internationaal / emigratie / expat</option>
+                  <option>Overig / ik weet het niet</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label for="message">Korte beschrijving van uw situatie</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Beschrijf in enkele zinnen uw fiscale vraag of de constructie/contracten waar het om gaat…"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="consent-row">
+                <input type="checkbox" id="consent" name="consent" required />
+                <label for="consent">
+                  Ik ga ermee akkoord dat mijn gegevens worden gebruikt om mijn
+                  vraag te beantwoorden. Ze worden niet gedeeld met derden
+                  zonder mijn toestemming.
+                </label>
+              </div>
+
+              <button type="submit" class="btn">
+                Verstuur verzoek
+              </button>
+            </form>
+          </div>
+
+          <aside class="contact-meta">
+            <div class="contact-meta-block">
+              <strong>Contactgegevens</strong>
+              <p>Vul hier uw eigen gegevens in, bijvoorbeeld:</p>
+              <p>
+                TAXAI · Boutique AI Tax & Fiscaal Kantoor<br />
+                Straatnaam 123<br />
+                1234 AB Amsterdam
+              </p>
+              <p>
+                E-mail: contact@taxai.nl<br />
+                Tel: +31 (0)20 123 45 67
+              </p>
+            </div>
+
+            <div class="contact-meta-block">
+              <strong>Belangrijke informatie</strong>
+              <p>
+                Hier kunt u verwijzen naar uw algemene voorwaarden,
+                privacyverklaring, klachtenprocedure en eventuele inschrijving
+                bij beroepsorganisaties (bijv. NOB, RB, NOvA).
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>© <span id="year"></span> TAXAI · Boutique AI Tax & Fiscaal Kantoor.</div>
+        <div class="footer-links">
+          <a href="#">Privacyverklaring</a>
+          <a href="#">Algemene voorwaarden</a>
+          <a href="#">Klachtenregeling</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
